@@ -56,7 +56,7 @@ set_default_backend(OpenAI(args.model_name))
 
 
 predictions = {}
-for instance in tqdm(dataset.select(range(200))):
+for instance in tqdm(dataset):
     cache_file = (output_dir / instance['id']).with_suffix(".json")
     reasons = _get_reasons(instance)
     if not cache_file.exists():
