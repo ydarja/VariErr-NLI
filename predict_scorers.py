@@ -64,7 +64,8 @@ if __name__ == "__main__":
 
 
     dataset = datasets.load_dataset("mainlp/varierr")['train']
-    outputs = torch.load(str(args.outputs))
+    # flag is needed for newer PyTorch versions
+    outputs = torch.load(str(args.outputs), weights_only=False)
     model_name = args.outputs.parent.name
 
     datamap_means = predict_datamap_means(outputs)

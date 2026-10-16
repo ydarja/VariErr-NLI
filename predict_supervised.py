@@ -59,7 +59,7 @@ if __name__ == "__main__":
 
 
     dataset = datasets.load_dataset("mainlp/varierr")['train']
-    outputs = torch.load(str(args.outputs))
+    outputs = torch.load(str(args.outputs), weights_only=False)
     model_name = args.outputs.parent.name
 
     preds_metadata_archaeology_knn = predict_metadata_archaeology(outputs=outputs, dataset=dataset, clf=KNeighborsClassifier(n_neighbors=20))
