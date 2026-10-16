@@ -12,7 +12,7 @@ import datasets
 PROMPT_TEMPLATE = f"We have collected annotations for an NLI instance together with reasons for the labels. Your task is to judge whether the reasons make sense for the label. Provide the probability (0.0 - 1.0) that the reason makes sense for the label. Give ONLY the reason and the probability, no other words or explanation. For example:\n\n Reason: <The verbatim copy of the reason>\n Probability: <the probability between 0.0 and 1.0 that the reason makes sense for the label, without any extra commentary whatsoever; just the probability!>."
 
 
-dataset = datasets.Dataset.from_json("dataset.json")
+dataset = datasets.Dataset.from_json("varierr.json")
 
 
 def instance_to_starting_prompt(instance):
