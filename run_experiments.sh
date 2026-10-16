@@ -14,7 +14,11 @@ python predict_supervised.py --outputs runs/44/train_outputs.pt
 
 # WARNING: This will use your OpenAI-API-key and will cost money.
 # Uncomment at your own risk
-# python predict_llms.py gpt-3.5-turbo
-# python predict_llms.py gpt-4-1106-preview
+
+# python eval_llms.py gpt-3.5-turbo
+# python predict_llms.py predictions/gpt-3.5-turbo/scores.json
+
+# python eval_llms.py gpt-4-1106-preview
+# python predict_llms.py predictions/gpt-4-1106-preview/scores.json
 
 python predict_baselines.py
