@@ -56,3 +56,7 @@ bash run_experiments.sh
 ## Acknowledgement
 - This work is funded by ERC Consolidator Grant DIALECT 101043235 and supported by project KLIMA-MEMES funded by the Bavarian Research Institute for Digital Transformation (bidt), an institute of the Bavarian Academy of Sciences and Humanities. 
 - The authors are responsible for the content of this publication.
+
+## Notes on reproducibility:
+- **Identifier mapping:** VARIERR contains two instance identifier schemes across its artifacts. Each dataset item has a current ID (e.g. `23751e`), while its explanation IDs contain a different numeric prefix (e.g. `664-entailment-1` and `664-contradiction-1`). Some prediction scripts derive item-label IDs from this explanation prefix, resulting in IDs such as `664-c`, whereas other files use the dataset item ID and produce `23751e-c`. These IDs therefore refer to the same item-label pair and should be mapped before comparing predictions across files. The mapping can be directly reconstructed  from the dataset.
+- **Metadata Archaeology (MA):** The released implementation uses `KFold()` without a fixed random_state, so the exact cross-validation splits cannot be reproduced deterministically. In our reproduction, results were relatively close to the reported values (mean difference ≈ 0.06), but the prediction-level correlation was only around 0.5
